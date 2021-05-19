@@ -10,7 +10,8 @@
     "prestart": "npm run build",
     "start:app": "node .",
     "start:scheduler": "node ./dist/src/scheduler/index.js",
-    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build'"
+    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build'",
+    "test:unit": "jest ."
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.11",
     "@types/node": "^15.3.0",
+    "@types/node-cron": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.26.0",
@@ -42,6 +44,7 @@
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "typescript": "^4.2.4"
   }
