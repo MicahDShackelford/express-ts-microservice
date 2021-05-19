@@ -23,7 +23,10 @@
   "homepage": "https://github.com/MicahDShackelford/express-js-microservice#readme",
   "dependencies": {
     "dotenv": "^9.0.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
