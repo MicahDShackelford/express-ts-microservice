@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/MicahDShackelford/express-js-microservice#readme",
   "dependencies": {
+    "aws-sdk": "^2.909.0",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
