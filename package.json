@@ -8,8 +8,9 @@
     "lint": "eslint --fix --config .eslintrc.json --ext .js,.ts .",
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node .",
-    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run start'"
+    "start:app": "node .",
+    "start:scheduler": "node ./dist/src/scheduler/index.js",
+    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build'"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
+    "node-cron": "^3.0.0",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
   },
