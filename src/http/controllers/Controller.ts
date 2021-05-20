@@ -10,8 +10,10 @@ import { Router } from 'express'
 |
 */
 
-export default abstract class Controller  {
-    public router: Router = Router()
+export default abstract class Controller {
+    public router: Router
 
-    constructor() {}
+    constructor () {
+        this.router = Router()
+    }
 }

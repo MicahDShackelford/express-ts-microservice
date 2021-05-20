@@ -16,5 +16,12 @@
     ],
     "rules": {
         "indent": ["error", 4]
-    }
+    },
+    "globals": {
+        "test": "readonly",
+        "expect": "readonly"
+    },
+    "ignorePatterns": [
+        "dist/*"
+    ]
 }
