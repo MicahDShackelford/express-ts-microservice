@@ -8,8 +8,8 @@
     "lint": "eslint --fix --config .eslintrc.json --ext .js,.ts .",
     "build": "tsc",
     "prestart": "npm run build",
-    "start:app": "node .",
-    "start:scheduler": "node ./dist/src/scheduler/index.js",
+    "start:app": "node . --runtype=app",
+    "start:scheduler": "node . --runtype=scheduler",
     "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build & npm run start:app'",
     "test:unit": "jest ."
   },
