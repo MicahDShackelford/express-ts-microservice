@@ -1,14 +1,32 @@
-import express, { Request, Response } from 'express'
-import * as ExampleController from './http/controllers/ExampleController.js'
+import express, { Router, Application } from 'express'
 
-const router = express.Router()
+export default class Api {
+    public router: Router
 
-router.use(express.json())
+    constructor(app: Application) {
+        this.router = Router()
+        app.use('/api', this.router)
+        this.router.use(express.json())
 
-router.get('/health', function (request: Request, response: Response) {
-    response.send('Ok')
-})
+        this.boot()
+    }
 
-router.get('/example-route', ExampleController.index)
+    public async boot() {
+        this.router.get('/example-route', await this.apiMethod('ExampleController.index'))
+    }
 
-export default router
+    /**
+     * @param slug Api Method slug with format: [CONTROLLER_NAME].[METHOD_NAME]
+     * @returns The requested method
+     */
+    public async apiMethod(slug:string):Promise<any> {
+        const split = slug.split('.')
+        const controllerName = split[0]
+        const methodName = split[1]
+
+        const controllerImport = await import(`./http/controllers/${controllerName}.js`)
+        const Controller = new controllerImport['default']()
+        
+        return Controller[methodName]
+    }
+}

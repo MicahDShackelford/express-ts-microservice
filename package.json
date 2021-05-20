@@ -10,7 +10,7 @@
     "prestart": "npm run build",
     "start:app": "node .",
     "start:scheduler": "node ./dist/src/scheduler/index.js",
-    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build'",
+    "dev": "nodemon --watch src --watch app.ts -e ts,js --exec 'npm run build & npm run start:app'",
     "test:unit": "jest ."
   },
   "repository": {
