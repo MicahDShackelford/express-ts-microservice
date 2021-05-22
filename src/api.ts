@@ -1,9 +1,9 @@
-import Express, { Router, Application } from 'express'
+import Express, {Router} from 'express'
 
 export default class Api {
-    public router: Router
+    public router: any
 
-    constructor (app: Application) {
+    constructor (app: any) {
         this.router = Router()
         app.use('/api', this.router)
         this.router.use(Express.json())
